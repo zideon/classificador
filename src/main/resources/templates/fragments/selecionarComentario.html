@@ -16,23 +16,23 @@ and open the template in the editor.
                     <div class="panel-heading" ><h2 th:text="${noticia.titulo}" >A Basic Panel</h2></div>
                 </div></center>
             <center><input  type="button" class='btn btn-default' value="Voltar" onClick="history.go(-1)"> 
-                <a href="#" class="btn-default btn-lg" style="margin-right: 1em" data-placement="bottom" data-toggle="tooltip" th:attr="title=${help}">
-                    <span class="glyphicon glyphicon-question-sign"></span>
-                </a></center>
+            </center>
             <table id="tabelaprincipal" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                     <tr >
                         <th >Comentario</th>
                         <th >Ódio</th>
+                        <th >Ofensivo</th>
                         <th >Neutro</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="entrada : ${comentarios}"> 
                         <td  th:text="${entrada.texto}" ></td>
-                        <td><center><a  th:href="@{/classificarComentario(id=${noticia.id},com=${entrada.idComentario},cla='odio')}" ><div class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-down"></span> Odio</div></a></center></td>                        
-                        <td><center><a  th:href="@{/classificarComentario(id=${noticia.id},com=${entrada.idComentario},cla='neutro')}" ><div class="btn btn-success"><span class="glyphicon glyphicon-hand-right"></span> Neutro</div></a></center></td>                        
-                    </tr>
+                        <td><center><a  th:href="@{/classificarComentario(id=${noticia.id},com=${entrada.idComentario},cla='odio')}" data-placement="bottom" data-toggle="tooltip" th:attr="title=${helpOdio}" ><div class="btn btn-danger">Odio</div></a></center></td>                        
+                <td><center><a  th:href="@{/classificarComentario(id=${noticia.id},com=${entrada.idComentario},cla='ofensivo')}" data-placement="bottom" data-toggle="tooltip" th:attr="title=${helpOfensa}" ><div class="btn btn-warning">Ofensivo</div></a></center></td>                        
+                <td><center><a  th:href="@{/classificarComentario(id=${noticia.id},com=${entrada.idComentario},cla='neutro')}" ><div class="btn btn-success">Neutro</div></a></center></td>                        
+                </tr>
                 </tbody>
             </table>
         </div>

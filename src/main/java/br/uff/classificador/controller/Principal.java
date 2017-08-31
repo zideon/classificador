@@ -104,7 +104,8 @@ public class Principal {
     @RequestMapping(value = "/mostrarComentarios", method = RequestMethod.GET)
     String selecionarComentarioGET(Model model, @RequestParam("id") String id,@CookieValue(value = "email") String email) throws IOException {
         model.addAttribute("view", "fragments/selecionarComentario");
-        model.addAttribute("help", "Qualquer ato de comunicação que inferiorize uma pessoa ou incite violência contra a mesma, tendo por base características como raça, gênero, etnia, nacionalidade, religião, orientação sexual ou outro aspecto passível de discriminação.");
+        model.addAttribute("helpOdio", "Qualquer ato de comunicação que inferiorize uma pessoa ou incite violência contra a mesma, tendo por base características como raça, gênero, etnia, nacionalidade, religião, orientação sexual ou outro aspecto passível de discriminação.");
+        model.addAttribute("helpOfensa", "Comentários que podem ser considerados impróprios para a discussão em determinados contextos. Geralmente com a intenção de ofender, provocar gratuitamente ou desqualificar o debate.");
         Noticia n = getNoticia(id);
         List<Comentario> saida = getComentarios(email,n);
         if (saida.isEmpty()) {
