@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div th:fragment="content" style='margin-top: 1em;margin-bottom: 1em'>   
+            <center>
+                <form class="form-horizontal" method="POST" action="/selecionadorPacote" th:object="${usuario}">
+                    <div class="panel-body">
+                        <div class="form-group" >
+                            <label for="email" class="col-sm-2 control-label">E-mail</label>
+                            <div class="col-sm-4"> 
+                                <input type="text" class="form-control" id="email" th:field="*{email}"/>
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="submit" class="btn btn-primary">Entrar</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </form>
+            </center>
+        </div>
+    </body>
+</html>

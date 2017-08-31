@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      >
+
+    <head>
+        <title>Classificador de discurso de ódio</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+        <link href="/css/jquery.dataTables.min.css" th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet" media="screen" />
+        <link rel="shortcut icon" th:href= "@{/img/icone_rad.ico}" type="image/x-icon" />
+        <script src="/js/jquery-1.12.1.min.js" th:src="@{/js/jquery-1.12.1.min.js}"></script>
+        <script src="/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+        <script src="/js/npm.js" th:src="@{/js/npm.js}"></script>
+        <script src="/js/dataTables.bootstrap.min.js" th:src="@{/js/dataTables.bootstrap.min.js}"></script>
+        <script src="/js/jquery.dataTables.min.js" th:src="@{/js/jquery.dataTables.min.js}"></script>
+        <script>
+            $(document).ready(function () {
+                $('#tabelaprincipal').DataTable();
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="col-sm-10 col-sm-offset-1">
+            <div th:replace="${view} :: content">Page Content</div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+    </body>
+    
+</html>
