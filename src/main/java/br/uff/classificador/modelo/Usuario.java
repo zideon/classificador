@@ -15,6 +15,10 @@ public class Usuario {
     public Usuario() {
     }
 
+    public Usuario(String email) {
+        this.email = email;
+    }
+
     public String getEmail() {
         return email;
     }

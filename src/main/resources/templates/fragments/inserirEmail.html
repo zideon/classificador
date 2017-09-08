@@ -11,23 +11,27 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div th:fragment="content" style='margin-top: 1em;margin-bottom: 1em'>   
-            <center>
-                <form class="form-horizontal" method="POST" action="/selecionadorPacote" th:object="${usuario}">
-                    <div class="panel-body">
+        <div th:fragment="content" style='margin-top: 1em;margin-bottom: 1em'>
+            <div class ="container">
+                <div class=" col-sm-6 col-sm-offset-3">
+                    <div class="jumbotron col-sm-12">
+                        <h2>Prezadx</h2>
+                        <p>Por favor insira seu e-mail, para que possamos separar o que foi feito por você do que foi feito pelas outras pessoas. Esta etapa só sera 
+                            necessária a primeira vez que entrar no sistema, porém se os dados do navegador forem apagados essa informação sera pedida novamente</p>
+                    </div>
+                    <form class="form-horizontal" method="POST" action="/selecionadorPacote" th:object="${usuario}">
                         <div class="form-group" >
-                            <label for="email" class="col-sm-2 control-label">E-mail</label>
-                            <div class="col-sm-4"> 
+                            <label for="email" class="col-sm-12">E-mail</label>
+                            <div class="col-sm-8"> 
                                 <input type="text" class="form-control" id="email" th:field="*{email}"/>
                             </div>
                             <div class="col-sm-4">
                                 <button type="submit" class="btn btn-primary">Entrar</button>
                             </div>
                         </div>
-                        
-                    </div>
-                </form>
-            </center>
+                    </form>
+                </div>
+            </div>
         </div>
     </body>
 </html>
